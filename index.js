@@ -131,12 +131,12 @@ app.post('/users/login', async function (request, response) {
   }
  });
 
-app.listen(PORT,()=>console.log(`APP is running ${PORT}`))
+app.listen(PORT,()=>console.log(`APP is running ${PORT}`));
 
 async function genHashedPassword(password){
   const NO_OF_ROUNDS=10;
   const salt = await bcrypt.genSalt(NO_OF_ROUNDS);
   const hashedPassword = await bcrypt.hash(password,salt);
-  return hashedPassword
+  return hashedPassword;
 }
 
